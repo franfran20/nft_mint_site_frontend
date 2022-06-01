@@ -65,7 +65,7 @@ export const MintComponent = () => {
         if (isWeb3Enabled) {
             updateUI()
         }
-    }, [isWeb3Enabled, account, chainId])
+    }, [isWeb3Enabled, account])
 
 
     const handleError = (err) => {
@@ -78,10 +78,10 @@ export const MintComponent = () => {
                     return <p className={styles.error}> Only whitelisted Addreses can mint now!</p >
                 }
                 if (err.data.message == maxNftExceeded) {
-                    return <p className={styles.error}>You're trying to mint more than the max supply of our nfts</p>
+                    return <p className={styles.error}>You&apos;re trying to mint more than the max supply of our nfts</p>
                 }
                 if (err.data.message == whiteListAmountExcceded) {
-                    return <p className={styles.error}>You're trying to mint more than the allowed whitelist amount</p>
+                    return <p className={styles.error}>You&apos;re trying to mint more than the allowed whitelist amount</p>
                 }
             }
             if (err.message == userDenyTx) {
@@ -97,7 +97,7 @@ export const MintComponent = () => {
             <div className={styles.processing}>
                 <p>Your transaction is processing....</p>
                 <p>View your transaction on etherscan here:</p>
-                <a href={`https://mumbai.polygonscan.com/tx/${data.hash}`} target={"_blank"}>{data.hash}</a>
+                <a href={`https://mumbai.polygonscan.com/tx/${data.hash}`}>{data.hash}</a>
 
             </div>
         )
@@ -105,11 +105,11 @@ export const MintComponent = () => {
 
     return (
         <div className={styles.wrapper}>
-            <h1>FRANFRAN NFT'S</h1>
+            <h1>FRANFRAN NFT&apos;S</h1>
             <p>
-                Just some random landscape free images gotten from pexels.com!.. We''l assume they're awesome. LOL!
+                Just some random landscape free images gotten from pexels.com. We&apos;ll assume they&apos;re awesome. LOL.
             </p>
-            <a href='https://testnets.opensea.io/collection/franfran/' target={'_blank'}>Click here to view our NFTS that have been minted by you or others on opensea</a>
+            <a href='https://testnets.opensea.io/collection/franfran/'>Click here to view our NFTS that have been minted by you or others on opensea</a>
             <p>Select the amount you want to mint and click the button below to mint yours now!</p>
             <div className={styles.minted}>
                 Minted {mintCount} /10
